@@ -181,16 +181,33 @@ public class MainActivity extends AppCompatActivity {
         // check if the request code is same as what is passed  here it is 2
         if(requestCode==1)
         {
+
+            yesButton = (Button) findViewById(R.id.yesButton);
+            yesButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    onYes(textView);
+                }
+            });
+            noButton = (Button) findViewById(R.id.noButton);
+            noButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    onNo(textView);
+                }
+            });
             Toast.makeText(this,"Hint is taken",Toast.LENGTH_SHORT).show();
         }
         if(requestCode==2)
         {
+            yesButton = (Button) findViewById(R.id.yesButton);
             yesButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view){
                     onYesCheat(textView);
                 }
             });
+            noButton = (Button) findViewById(R.id.noButton);
             noButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view){
